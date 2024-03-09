@@ -1,14 +1,17 @@
 import { ShopItem } from "@/components/definitions/shop-items";
 import ItemDetails from "@/components/ui/ItemDetails";
+import { ShopItems } from "@/lib/data";
 
-const ShopItems = import("@/app/api/items/route").then(
-  (module) => module.ShopItems
-);
+interface PageProps {
+  params: {
+    id: ShopItem["id"];
+  };
+}
 
-export default async function ItemPage({ id }: { id: number }) {
+export default async function ItemPage({ params }: PageProps) {
+  const { id } = params;
   console.log(id);
-  const items: ShopItem[] = await ShopItems;
-  const item = items.find((item) => item.id === id);
+  const item = ShopItems.find((item) => item.id === id);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <ItemDetails item={item!} />

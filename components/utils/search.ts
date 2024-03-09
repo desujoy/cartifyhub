@@ -1,11 +1,7 @@
-const ShopItems = import("@/app/api/items/route").then(
-  (module) => module.ShopItems
-);
+import { ShopItems } from "@/lib/data";
 
 export function searchItems(query: string) {
-  return ShopItems.then((items) =>
-    items.filter((item) =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    )
+  return ShopItems.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase())
   );
 }
