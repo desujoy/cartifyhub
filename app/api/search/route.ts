@@ -1,7 +1,6 @@
 export const runtime = "edge";
 
 import { NextRequest, NextResponse } from "next/server";
-import { searchQuery } from "@/components/definitions/search-query";
 
 const ShopItems = import("@/lib/data").then((module) => module.ShopItems);
 export const dynamic = "force-dynamic";
