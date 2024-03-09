@@ -1,3 +1,5 @@
+export const runtime = "automatic";
+
 import { ShopItem } from "@/components/definitions/shop-items";
 import ItemDetails from "@/components/ui/ItemDetails";
 import { ShopItems } from "@/lib/data";

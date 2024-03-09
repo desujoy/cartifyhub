@@ -1,3 +1,5 @@
+export const runtime = "automatic";
+
 import { NextRequest, NextResponse } from "next/server";
 import { searchQuery } from "@/components/definitions/search-query";
 
