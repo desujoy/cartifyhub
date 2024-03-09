@@ -1,4 +1,4 @@
-export const runtime = "automatic";
+export const runtime = "edge";
 
 import { ShopItem } from "@/components/definitions/shop-items";
 import ItemDetails from "@/components/ui/ItemDetails";

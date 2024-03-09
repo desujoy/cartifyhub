@@ -1,4 +1,4 @@
-export const runtime = "automatic";
+export const runtime = "edge";
 
 import { NextRequest, NextResponse } from "next/server";
 import { searchQuery } from "@/components/definitions/search-query";
