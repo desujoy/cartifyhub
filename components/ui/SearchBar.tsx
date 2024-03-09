@@ -47,7 +47,7 @@ export const SearchBar = () => {
             )}
             {searchResults.length > 0 &&
               searchResults.map((result) => (
-                <Link href={`/item/${result.id}`} key={result.id}>
+                <Link href={`/items/${result.id}`} key={result.id}>
                   <span
                     className="p-2 pl-4 bg-slate-100 block w-full text-left hover:bg-slate-200 cursor-pointer"
                     key={result.id}

@@ -8,6 +8,7 @@ import {
 } from "./card";
 import Image from "next/image";
 import { ShopItem } from "../definitions/shop-items";
+import Link from "next/link";
 
 export default function ItemList({ items }: { items: ShopItem[] }) {
   return (
@@ -19,26 +20,28 @@ export default function ItemList({ items }: { items: ShopItem[] }) {
             key={item.id}
             className="flex flex-col w-full sm:w-1/2 md:w-1/4 lg:w-1/5 xl:w-1/5 m-4"
           >
-            <CardHeader>
-              <CardTitle>{item.name}</CardTitle>
-              <CardDescription className="text-sm overflow-ellipsis overflow-hidden h-10">
-                {item.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center items-center">
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={300}
-                height={300}
-              />
-            </CardContent>
-            <CardFooter className="flex justify-between items-center">
-              <p>${item.price}</p>
-              <button className="bg-primary text-primary-foreground rounded-lg p-2">
-                Add to cart
-              </button>
-            </CardFooter>
+            <Link href={`/items/${item.id}`} key={item.id}>
+              <CardHeader>
+                <CardTitle>{item.name}</CardTitle>
+                <CardDescription className="text-sm overflow-ellipsis overflow-hidden h-10">
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex justify-center items-center">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={300}
+                  height={300}
+                />
+              </CardContent>
+              <CardFooter className="flex justify-between items-center">
+                <p>${item.price}</p>
+                <button className="bg-primary text-primary-foreground rounded-lg p-2">
+                  Add to cart
+                </button>
+              </CardFooter>
+            </Link>
           </Card>
         ))}
     </div>
